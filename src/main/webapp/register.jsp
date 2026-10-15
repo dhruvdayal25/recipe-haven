@@ -1,0 +1,5 @@
+<%@ page contentType="text/html;charset=UTF-8" %>
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Register | Recipe Haven</title><link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css"></head><body>
+<%@ include file="partials-nav.jspf" %><main class="container"><section class="form-card"><span class="eyebrow">Join the community</span><h1>Create account</h1>
+<% if(request.getAttribute("error")!=null){ %><div class="alert"><%= request.getAttribute("error") %></div><% } %>
+<form method="post" action="${pageContext.request.contextPath}/register"><label>Your name</label><input name="name" required maxlength="100" autocomplete="name"><label>Email</label><input type="email" name="email" required maxlength="190" autocomplete="email"><label>Password (minimum 8 characters)</label><input type="password" name="password" minlength="8" required autocomplete="new-password"><p><button type="submit">Create account</button></p></form><p class="muted">Already registered? <a href="${pageContext.request.contextPath}/login">Log in</a></p></section></main></body></html>
